@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Web site to calculate statistical data</title>
+
+        <style>
+            h1{
+                font-size: 1.5em;
+            }
+            input, button {
+                min-width: 72px;
+                min-height: 36px;
+                border: 1px solid grey;
+            }
+            label,input, button {
+                display: block;
+            }
+            input {
+                margin-bottom: 1em;
+            }            
+        </style>
+    </head>
+    <body>
+        <h1>Average values</h1>
+        <label for="max">Random numbers</label>
+        <input placeholder="Maxnumber" id="max">
+        <label for="number_cal">Number of calculations</label>
+        <input placeholder="Number" id="number_cal">
+        <button id="start">Start</button>
+        <button id="continue">Continue</button>
+        <button id="stop">Stop</button>
+
+        <p></p>
+        <script src="get_started.js"></script>
+    </body>
+</html>
