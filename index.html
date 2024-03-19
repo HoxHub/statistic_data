@@ -1,36 +1,119 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Web site to calculate statistical data</title>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statistikkportal</title>
+    <link rel="stylesheet" href="style.css">
 
-        <style>
-            h1{
-                font-size: 1.5em;
-            }
-            input, button {
-                min-width: 72px;
-                min-height: 36px;
-                border: 1px solid grey;
-            }
-            label,input, button {
-                display: block;
-            }
-            input {
-                margin-bottom: 1em;
-            }            
-        </style>
-    </head>
-    <body>
-        <h1>Average values</h1>
-        <label for="max">Random numbers</label>
-        <input placeholder="Maxnumber" id="max">
-        <label for="number_cal">Number of calculations</label>
-        <input placeholder="Number" id="number_cal">
-        <button id="start">Start</button>
-        <button id="continue">Continue</button>
-        <button id="stop">Stop</button>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            max-width: 500px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        label {
+            font-size: 16px;
+            margin-bottom: 8px;
+            display: block;
+        }
+        select {
+            width: calc(100% - 20px);
+            padding: 8px;
+            margin-bottom: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        button:active {
+            background-color: #004080;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Statistikkportal</h1>
+        <form id="calculator-form">
+            <label for="years">År:</label>
+            <select id="years" multiple required>
+                <option value="2007">2007</option>
+                <option value="2008">2008</option>
+                <option value="2009">2009</option>
+                <option value="2010">2010</option>
+                <option value="2011">2011</option>
+                <option value="2012">2012</option>
+                <option value="2013">2013</option>
+                <option value="2014">2014</option>
+                <option value="2015">2015</option>
+                <option value="2016">2016</option>
+                <option value="2017">2017</option>
+                <option value="2018">2018</option>
+                <option value="2019">2019</option>
+                <option value="2020">2020</option>
+                <option value="2021">2021</option>
+                <option value="2022">2022</option>
+                <option value="2023">2023</option>
+                <option value="2024">2024</option>
+            </select>
 
-        <p></p>
-        <script src="get_started.js"></script>
-    </body>
+            <label for="number_cal">Fylker 2024-:</label>
+            <select id="fylker" multiple required>
+                <option value="31">Østfold</option>
+                <option value="32">Akerhus</option>
+                <option value="03">Oslo</option>
+                <option value="33">Buskerud</option>
+                <option value="34">Innlandet</option>
+                <option value="39">Vestfold</option>
+                <option value="40">Telemark</option>
+                <option value="42">Agder</option>
+                <option value="11">Rogaland</option>
+                <option value="46">Vestland</option>
+                <option value="15">Møre og Romsdal</option>
+                <option value="50">Trøndelag - Trööndelage</option>
+                <option value="18">Nordland - Nordlánnda</option>
+                <option value="55">Troms - Romsa - Tromssa</option>
+                <option value="56">Finnmark - Finnmárku - Finmarkku</option>
+                <option value="21">Svalbard</option>
+            </select>
+
+            <button type="submit">Start</button>
+            <button type="button" id="continue" style="display: none;">Continue</button>
+            <button type="button" id="stop" style="display: none;">Stop</button>
+        </form>
+
+        <div id="result" style="display: none;">
+            <h2>Result:</h2>
+            <p id="average"></p>
+        </div>
+    </div>
+
+    <script src="get_started.js"></script>
+</body>
 </html>
