@@ -3,14 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data fra Statistikkportal, Innbyggere per km&sup2; landareal</title>
+    <title>Data fra Statistikkportal</title>
     <link rel="stylesheet" href="style.css">
 
 </head>
 <body>
     <div class="container">
-        <h1>Data fra Statistikkportal, Innbyggere per km&sup2; landareal</h1>
+        <h1>Data fra Statistikkportal</h1>
         <form id="calculator-form">
+            <label for="parameter">Parameter:</label>
+            <select id="parameter" required>
+                <option value="Folkemengde">Befolkning per 1.1. (personer)</option>
+                <option value="ArealKm2">Areal (km²)</option>
+                <option value="LandArealKm2">Landareal (km²)</option>
+                <option value="FolkeLandArealKm2">Innbyggere per km² landareal</option>
+            </select>
+
             <label for="years">År:</label>
             <select id="years" multiple required>
                 <option value="2007">2007</option>
@@ -53,13 +61,6 @@
                 <option value="21">Svalbard</option>
             </select>
 
-            <label for="parameter">Parameter:</label>
-            <select id="parameter" required>
-                <option value="median">Median</option>
-                <option value="mean">Gjennomsnitt</option>
-                <option value="max">Maksimum</option>
-                <option value="min">Minimum</option>
-            </select>
 
             <button type="submit">Vis</button>
         </form>
